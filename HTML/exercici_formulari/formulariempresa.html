@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table border="1" align=center>
+            <tr>
+                <td>
+                    <label for="nom">Nom</label>
+                    <br>
+                    <label for="empresa">Empresa</label>
+                    <br>
+                    <label for="telefon">Telèfon</label>
+                    <br>
+                    <label for="email">Email</label>
+                </td>
+                <td colspan="2">
+                    <input type="text" name="nom" id="nom">
+                    <br>
+                    <input type="text" name="empresa" id="empresa">
+                    <br>
+                    <input type="tel" name="telefon" id="telefon">
+                    <br>
+                    <input type="text" name="email"id=email>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td><p>Quantitat</p></td>
+                <td><p>Producte</p></td>
+                <td><p>Import</p></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="quantitat1" id="quantitat1" min="0"><br><br>
+                    <input type="number" name="quantitat2" id="quantitat2" min="0"><br><br>
+                    <input type="number" name="quantitat 3" id="quantitat3" min="0"><br><br>
+                </td>
+                <td>
+                    <select name="productes" id="productes">
+                        <option value="florero">Florero</option>
+                        <option value="cendrer">Cendrer</option>
+                        <option value="morter">Morter</option>
+                        <option value="posaculleres">Posaculleres</option>
+                        <option value="iman">Iman</option>
+                    </select>
+                    <br><br>
+
+                    <select name="productes" id="productes">
+                        <option value="florero">Florero</option>
+                        <option value="cendrer">Cendrer</option>
+                        <option value="morter">Morter</option>
+                        <option value="posaculleres">Posaculleres</option>
+                        <option value="iman">Iman</option>
+                    </select>
+                    <br><br>
+                    <select name="productes" id="productes">
+                        <option value="florero">Florero</option>
+                        <option value="cendrer">Cendrer</option>
+                        <option value="morter">Morter</option>
+                        <option value="posaculleres">Posaculleres</option>
+                        <option value="iman">Iman</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>TOTAL</th>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        
+        <table align="center">
+            <tr>
+                <td>
+        <label for="pagament" align=center>Mètode de pagament</label><br>
+        <input type="radio" name="metodepag" id="targeta" value="targeta" align=center><label for="targeta">Targeta</label><br>
+        <input type="radio" name="metodepag" id="efectiu" value="efectiu"><label for="efectiu">Efectiu</label><br>
+        <input type="radio" name="metodepag" id="transferencia" value="transferencia"><label for="transferencia">Transferència</label><br><br>
+
+        <input type="checkbox" id="privacitat" name="privacitat">
+        <label for="privacitat">Accepto la política de privacitat</label><br>
+
+        <input type="submit" name="Enviar comanda">
+            </tr>
+                </td>
+        </table>
+
+    </form>
+</body>
+</html>
