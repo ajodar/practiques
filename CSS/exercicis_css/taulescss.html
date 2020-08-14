@@ -1,0 +1,228 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        thead{
+            text-align: center;
+            background-color: rgb(48, 248, 48);
+            font-size: 12pts;
+            font-weight: bold;
+        }
+
+        
+
+        tbody{
+            text-align: center;
+            font-size: 11pt;
+        }
+
+        tbody tr:nth-child(even){
+            background-color: rgb(210, 247, 215);
+        }
+
+        tbody tr:nth-child(odd){
+            background-color: rgb(240, 248, 230);
+        }
+
+        tfoot{
+            text-align: center;
+            background-color:rgb(62, 179, 62);
+            font-size: 15pt;
+            font-weight: bold;
+        }
+
+        col.primera{
+            color: salmon;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <table border="1" width=100%>
+
+        <colgroup>
+            <col  span="2" class="primera">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <td colspan="10">VENDES 2019-2020</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="4">2019</td>
+                <td colspan="4">2020</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td>Primavera</td>
+                <td>Estiu</td>
+                <td>Tardor</td>
+                <td>Hivern</td>
+                <td>Primavera</td>
+                <td>Estiu</td>
+                <td>Tardor</td>
+                <td>Hivern</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">Barcelona</td>
+                <td>Barceloneta</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Hospitalet</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Badalona</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <td rowspan="3">Girona</td>
+                <td>Girona</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Roses</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Besalú</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+
+            <td rowspan="3">Tarragona</td>
+                <td>Tarragona</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Reus</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Cambrils</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <td rowspan="3">Lleida</td>
+                <td>Lleida</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Balaguer</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>La Seu d'Urgell</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Totals</td>
+                <td>1200</td>
+                <td>2400</td>
+                <td>3400</td>
+                <td>4800</td>
+                <td>1200</td>
+                <td>2400</td>
+                <td>3400</td>
+                <td>4800</td>
+            </tr>
+            <td colspan="2">Total anual</td>
+                <td colspan="4">12000</td>
+                <td colspan="4">12000</td>
+        </tfoot>
+    </table>
+
+</body>
+</html>
