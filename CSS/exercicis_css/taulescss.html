@@ -4,19 +4,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+
+
     <style>
-        thead{
-            text-align: center;
-            background-color: rgb(48, 248, 48);
-            font-size: 12pts;
-            font-weight: bold;
+
+        table{
+            font-family: 'Ubuntu Condensed', sans-serif;
         }
 
+        thead{
+            text-align: center;
+            background: rgb(34,193,195);
+            background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(248,253,45,1) 100%);;
+            font-size: 12pts;
+        }
         
+        .titoltaula{
+            font-weight: bold;
+            font-size: 25;
+        }
+        .anys{
+            background-color: rgb(34,193,195) ;
+            font-size: 20;
+        }
+
+        .estacions{
+            font-style: italic;
+            
+            background-color:rgba(248,253,45,1)
+            }
 
         tbody{
             text-align: center;
-            font-size: 11pt;
+            font-size: 12pt;
         }
 
         tbody tr:nth-child(even){
@@ -32,10 +53,21 @@
             background-color:rgb(62, 179, 62);
             font-size: 15pt;
             font-weight: bold;
+            border: 10px solid red;
         }
 
         col.primera{
-            color: salmon;
+            font-weight: bold;
+            color: red;
+        }
+
+        .blanc{
+            background-color: white;
+            border: white;
+        }
+
+        .resultatfinal{
+            border-width: 10;
         }
 
     </style>
@@ -46,20 +78,21 @@
     <table border="1" width=100%>
 
         <colgroup>
-            <col  span="2" class="primera">
+            <col  class="primera">
         </colgroup>
 
         <thead>
             <tr>
-                <td colspan="10">VENDES 2019-2020</td>
+                <td colspan= 2 class=blanc></td>
+                <td colspan="10" class="titoltaula">VENDES 2019-2020</td>
             </tr>
             <tr>
-                <td colspan="2">&nbsp;</td>
-                <td colspan="4">2019</td>
-                <td colspan="4">2020</td>
+                <td colspan="2" class=blanc>&nbsp;</td>
+                <td colspan="4" class="anys">2019</td>
+                <td colspan="4" class="anys">2020</td>
             </tr>
-            <tr>
-                <td colspan="2">&nbsp;</td>
+            <tr class="estacions">
+                <td colspan="2" class=blanc>&nbsp;</td>
                 <td>Primavera</td>
                 <td>Estiu</td>
                 <td>Tardor</td>
@@ -218,7 +251,7 @@
                 <td>3400</td>
                 <td>4800</td>
             </tr>
-            <td colspan="2">Total anual</td>
+            <td colspan="2" class="resultatfinal">Total anual</td>
                 <td colspan="4">12000</td>
                 <td colspan="4">12000</td>
         </tfoot>
