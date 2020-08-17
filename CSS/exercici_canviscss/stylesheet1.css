@@ -1,0 +1,101 @@
+
+
+#container{
+    margin: 15px;
+    background-color: white;
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#titol{
+    background-color: #32a852;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 4px;
+    line-height: 26px;
+}
+
+#titol h1, #titol p{
+    margin: 0;
+    padding: 0;
+}
+
+#menu a{
+    background-color: rgb(236, 236, 236);
+    border: 1px solid gray;
+    text-decoration:none;
+    color: black;
+    padding: 5px;
+    margin: 4px;
+    border-radius: 5px;
+    padding-right: 80px;
+}
+
+#menu #nostyle a{
+    padding-right: 70px;
+}
+
+#menu a:hover{
+    background-color: white;
+}
+
+#menu li{
+    list-style-type: none;
+    position: relative;
+    float: none;
+    background-color: white;
+    margin: 5px 0px 15px 0px;
+    width: 200px;
+
+}
+
+#menu ul{
+    background-color:white;
+    padding: 5px 0 0 0;
+    position: relative;
+    float: left;
+    width: 200px;
+    margin: 0;
+
+}
+
+
+#text-mig{
+    position: relative;
+    float: left;
+    background-color: rgb(252, 252, 252);
+    width: 875px;
+    padding: 15px;
+}
+
+#text-mig a{
+    color: black;
+}
+
+#side-bar{
+    position: relative;
+    float: left;
+    background-color: blue;
+    width: 175px;
+    height: auto;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.75;
+    border-radius: 5px;
+    
+}
+
+#peu-pagina{
+    background-color: rgb(236, 236, 236);
+    border: 1px solid gray;
+    position: static;
+    float: left;
+    text-align: center;
+    font-size: 11px;
+    padding: 5px;
+    margin: 4px;
+    border-radius: 5px;
+}
+
