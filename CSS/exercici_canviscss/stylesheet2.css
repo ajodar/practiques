@@ -1,0 +1,111 @@
+
+body{
+    margin: 0;
+    background-color: tomato;
+}
+
+#container{
+    background-color: tomato;
+    margin-top: 15px;
+}
+
+#titol{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30;
+    background-color: tomato;
+    margin: 0px 20px;
+    line-height: 0.8;
+}
+
+
+#menu{
+    background-color: white;
+    width: 200px;
+    height: 243px;
+    position: absolute;
+    right: 0;
+    font-family: Verdana;
+}
+
+#menu a{
+    background-color: tomato;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 10px;
+    display: block;
+    border: 1px solid tomato;
+    border-radius: 20px;
+    font-size: 12pt;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#menu a:hover{
+    background-color: white;
+    color: tomato;
+}
+
+#menu #destacat{
+    background-color: white;
+    color: tomato;
+    font-weight: tomato;
+}
+
+#menu ul{
+    background-color: transparent;
+    list-style: none;
+    padding-left: 0;
+}
+
+#text-mig{
+    background-color: rgb(255, 255, 255);
+    width: 1150px;
+    padding: 10px;
+    margin-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#text-mig h1, h2{
+    color: tomato;
+}
+
+
+#text-mig h1{
+    font-size: 20pt;
+}
+
+#text-mig h2{
+    font-size: 16pt;
+}
+
+#text-mig p{
+    font-size: 10pt;
+    padding-right: 50px;
+}
+
+
+#text-mig a{
+    color: tomato;
+}
+
+#side-bar{
+    background-color: #F6DAD7;
+    color: tomato;
+    padding: 10px;
+    margin: 0px 10px;
+    line-height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#peu-pagina{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    font-size: 11px;
+    color: white;
+    padding: 0 30px;
+    text-align: center;    
+    line-height: 1.75;
+}
