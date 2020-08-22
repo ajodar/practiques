@@ -1,0 +1,58 @@
+
+@font-face{
+    font-family: museo;
+    src: url(fonts/MuseoSans-300.otf);
+}
+
+body{
+    margin: 0;
+}
+
+#container-intro img{
+    width: 200px;
+
+}
+
+#container-intro{
+    background-color: #003A70;
+}
+
+#menu-dalt{
+    background-color: #003A70;
+    
+}
+
+#menu-fila1{
+    padding: 25px 18px 22px 18px;
+    background-color: #003A70;
+    width: 750px;
+    font-size: 14px;
+    margin: 0;
+    width: 100%;
+    
+}
+
+#content-menu-dalt{
+    background-color: #003A70;
+    width: 100%;
+}
+
+#menu-fila2{
+    font-size: 14px;
+    padding: 10px 6px 23px 6px;
+    text-align: center;
+}
+
+#separador{
+    background-color: rgb(66, 66, 173);
+    width: 90%;
+}
+
+#menu-dalt a{
+    color: white;
+    text-decoration: none;
+}
+
+#menu-dalt a:hover{
+    text-decoration:  underline orange ;
+}

@@ -1,0 +1,228 @@
+
+@font-face{
+    font-family: Main-font;
+    src:url(fonts/MuseoSans-300.otf)
+}
+
+body{
+    margin:0;
+    font-family: Main-font;
+}
+
+#container{
+    width: 100%;
+}
+
+/*Primera part: LOGO + MENUS*/
+
+
+/*Segona part: cami de la web*/
+
+#cami-web{
+    background-color: #E6F1FC;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#cami-web-pestanyes{
+    background-color: #E6F1FC;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#cami-web a{
+    padding: 25px;
+    text-decoration: none;
+    color: #0A60B0;
+}
+
+#cami-web a:hover{
+    text-decoration: underline;
+}
+
+#academics-cami {
+    padding: 25px;
+    line-height: 75px;
+}
+
+/*Tercera part: main text*/
+
+    /*Apartat academics*/
+
+#academics{
+    width: 100%;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#academics-title{
+    background-color: white;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    
+}
+
+#academics-text{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#academics-title h1{
+    font-size: 38px;
+    padding-left: 30px;
+}
+
+#academics-text p{
+    font-size: 24px;
+    line-height: 1.5;
+    padding-right: 320px;
+    padding-left: 30px;
+    padding-bottom: 25px;
+}
+
+
+
+    /*Apartat foto*/
+
+#foto-ample img{
+    width: 100%;
+}
+
+    /*Apartat journey*/
+
+#journey{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#journey-title{
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 50px;
+}
+
+#journey-text{
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+}
+
+#journey-title h1{
+    font-size: 26px;
+    padding-left: 30px;
+}
+
+#journey-text p{
+    font-size: 20px;
+    line-height: 1.5;
+    padding-right: 320px;
+    padding-left: 30px;
+    padding-bottom: 25px;
+}
+
+
+/*Main text: responsive*/
+
+@media screen and (max-width: 800px){
+    #main-text h1{
+        font-size: 24px;
+    }
+    #main-text p{
+        font-size: 20px;
+        padding-right: 5px;
+    }
+}
+
+
+/*Quarta part: quadradets foto + text*/
+
+#quadrets-container{
+    width: 100%;
+    background-color: rgb(245, 106, 106);
+}
+
+.quadre-petit{
+    background-color: rgb(118, 235, 235);
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 10px auto;
+}
+
+
+
+
+.quadre-text p{
+    font-size: 20px;
+}
+
+.quadre-text h2{
+    font-size: 36px;
+}
+
+.quadre-foto{
+    background-color: rgb(69, 139, 84);
+    width: 700px;
+    position: absolute;
+    right: 150px;
+    z-index: 1;
+    
+}
+
+.quadre-foto img{
+    width: 650px;
+    height: 440px;
+    display: block;
+    margin: 0 auto
+}
+
+.quadre-text{
+    background-color: yellow;
+    position: relative;
+    float: left;
+    left: 50px;
+    width: 45%;
+    max-width: 400px;
+    padding: 30px 50px;
+    margin: 10px;
+    z-index: 2;
+}
+
+.quadre-text a{
+    display: block;
+    text-decoration: none;
+    background-color: #7C2855;
+    border: 2px solid #7C2855;
+    letter-spacing: 1.5px;
+    padding: 14px 36px;
+    margin-top: 30px;
+    width: 200px;
+    color: white;
+}
+
+
+ @media screen and (max-width:700px){
+     .quadre-text{
+         top: 100px;
+         width: 600px;
+     }
+
+     .quadre-foto{
+        position: relative;
+        float: right;
+     }
+ }
+
+
+ 

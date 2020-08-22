@@ -1,0 +1,84 @@
+
+body{
+    margin: 0;
+}
+
+
+#encapcalament{
+    background-color: darkcyan;
+    margin: 10px auto;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+#encapcalament img{
+    width: 200px;
+    display: block;
+    position: relative;
+    float: left;
+    margin: 15px 25px;
+}
+
+#menu{
+    background-color: darkgoldenrod;
+    margin: 0 0 0 200px;
+}
+
+
+#menu a{
+    color:white;
+    background-color: violet;
+    text-decoration: none;
+    width: 200px;
+}
+
+#menu-dalt ul{
+    background-color: rgb(0, 255, 42);
+    width: 100%;
+    height: 75px;
+    position: static;
+    list-style: none;
+    margin: 0 0 0 250px;
+}
+
+#menu-dalt li{
+    background-color: tomato;
+    position: relative;
+    float: left;
+    padding: 20px;
+    margin: 10px;
+       
+}
+
+#menu-baix ul{
+    list-style: none;
+    margin: 0 0 0 250px;
+}
+
+
+#menu-baix li{
+    position: relative;
+    float: left;
+    background-color: rgb(57, 37, 235);
+    position: relative;
+    float: left;
+    padding: 20px;
+
+}
+
+#encapcalament hr{
+    color: blue;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 295px;
+}
+
+#passos-web{
+    position: static;
+    width: 100%;
+    height: 50px;
+}
+
+
