@@ -1,0 +1,79 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .prod{
+            position: relative;
+            float: left;
+            width: 22%;
+            background-color: red;
+            margin: 10px;
+        }
+
+        @media screen and (max-width: 600px){
+            .prod{
+                width: 40%;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .prod{
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="prod">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque purus lacus, laoreet eu orci at, viverra
+            auctor velit.
+        </div>
+
+        <div class="prod">
+            Vestibulum vel auctor lectus, euismod vehicula nulla. Nullam vulputate arcu blandit justo feugiat
+            rutrum.
+        </div>
+
+        <div class="prod">
+            Nulla scelerisque libero eu imperdiet bibendum. Proin quis velit pharetra lorem ultricies aliquam sit
+            amet eget risus.
+        </div>
+
+        <div class="prod">
+            Curabitur molestie mauris sit amet rutrum efficitur. Donec tempor enim sit amet euismod auctor.
+        </div>
+
+        <div class="prod">
+            Sed blandit imperdiet tellus nec cursus. Sed non porttitor felis, ac lobortis mauris. Nulla ut ligula urna.
+        </div>
+
+        <div class="prod">
+            Vestibulum rhoncus faucibus placerat. Sed tincidunt in ante nec lacinia. Donec convallis, orci et dapibus
+            consequat, neque lectus scelerisque libero, venenatis posuere mi dui a eros. Sed ligula turpis, auctor sed
+            facilisis non, ornare sed urna. 
+        </div>
+
+        <div class="prod">
+            Quisque ornare vestibulum nibh, sit amet tincidunt mi. In sit amet mauris
+            placerat, cursus nibh ac, rutrum sapien.
+        </div>
+
+        <div class="prod">
+            Nulla scelerisque libero eu imperdiet bibendum. Proin quis velit pharetra lorem ultricies aliquam sit
+            amet eget risus. 
+        </div>
+    </div>
+
+</body>
+</html>
