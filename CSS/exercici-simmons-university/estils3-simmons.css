@@ -4,8 +4,16 @@
     src: url(fonts/MuseoSans-300.otf);
 }
 
+@font-face{
+    font-family: museo-bold;
+    src: url(fonts/MuseoCyrillic-700.otf);
+}
+
+
+
 body{
     margin: 0;
+    font-family: 'Museo','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #container-intro img{
@@ -18,34 +26,41 @@ body{
 }
 
 #menu-dalt{
-    background-color: #003A70;
-    
+    background-color: #003A70;    
 }
 
 #menu-fila1{
+    float: right;
     padding: 25px 18px 22px 18px;
     background-color: #003A70;
-    width: 750px;
     font-size: 14px;
     margin: 0;
-    width: 100%;
-    
+    width: 600px;
+    text-align: left;   
 }
 
-#content-menu-dalt{
-    background-color: #003A70;
-    width: 100%;
-}
+
 
 #menu-fila2{
-    font-size: 14px;
-    padding: 10px 6px 23px 6px;
+    font-size: 16px;
+    font-family: museo-bold;
+    padding: 20px 6px 23px 6px;
     text-align: center;
+    position: relative;
+    float: right;
+    background-color: #003A70;
+    width: 100%;
+    max-width: 900px;
+    
 }
 
 #separador{
     background-color: rgb(66, 66, 173);
     width: 90%;
+    position: relative;
+    top: 55px;
+    margin-left: 75px;
+    z-index: 1;
 }
 
 #menu-dalt a{
@@ -55,4 +70,322 @@ body{
 
 #menu-dalt a:hover{
     text-decoration:  underline orange ;
+}
+
+@media screen and (max-width:1200px){
+    #menu-fila2{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:860px){
+    #menu-dalt{
+        display: none
+    }
+    #container-intro img{
+        width: 100px;
+    }
+}
+
+
+
+/*2n: Pathway web*/
+
+#path-container{
+    background-color: #E6F1FC;
+}
+
+#path-text{
+    padding: 30px 20px;
+    color: #0A60B0;
+    word-spacing: 15px;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    font-size: 14px;
+}
+
+#path-text a{
+    color: #0A60B0;
+}
+
+#academics-path{
+    color: black;
+}
+
+
+/*3r: Text Academics*/
+
+#academics-titol{
+    padding: 50px 0 0 0 ;
+    font-family: museo-bold;
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#academics-text{
+    padding: 30px 0 50px 0 ;
+    font-family: museo;
+    font-size: 24px;
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 768px){
+    #academics-titol h1{
+        font-size: 24px;
+    }
+    
+    #academics-text{
+        font-size: 20px;
+    }
+}
+
+/*4t: Imatge*/
+
+
+/*5è: Text journey starts here/
+/* Copy y paste de Academics, canviant el text*/
+
+#journey-titol{
+    padding: 50px 0 0 0 ;
+    font-family: museo-bold;
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 36px;
+}
+
+#journey-text{
+    padding: 30px 0 50px 0 ;
+    font-family: museo;
+    font-size: 20px;
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#journey-text br{
+    line-height: 50px;
+}
+
+
+
+@media screen and (max-width: 768px){
+    #journey-titol h1{
+        font-size: 24px;
+    }
+    
+    #journey-text{
+        font-size: 20px;
+    }
+}
+
+
+/*6è: Quadres dobles IMG & TEXT*/
+
+/*6.1 i 6.3*/
+
+.container-quadres{
+    margin: 0 auto;
+    background-color: yellow;
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px;
+}
+
+
+.quadre-text{
+    background-color: white;
+    padding: 60px 60px 30px 60px;
+    max-width: 530px;
+    margin: 20px 0px;
+    position: relative;
+    width: 45%;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);  
+}
+
+.quadre-text h3{
+    font-size: 36px;
+    font-family: museo-bold;
+}
+
+.quadre-text p{
+    font-size: 20px;
+    padding: 30px 0px;
+}
+
+
+.quadre-text a{
+    font-size: 16px;
+    display: block;
+    padding: 14px 36px;
+    width: 271px;
+    background-color: rgb(124, 40, 85);
+    color: white;
+    text-align: center;
+}
+
+
+.quadre-foto img{
+    display: block;
+    position: relative;
+    float: right;
+}
+
+@media screen and (max-width: 1000px){
+    .quadre-text{
+        position: relative;
+        float: left;
+        max-width: 750px;
+        width: 100%;
+        top: -100px;
+        margin-bottom: 0px;
+    }
+
+    .quadre-text h3{
+        font-size: 26px;
+    }
+
+    .container-quadres{
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .quadre-foto img{
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
+        max-width: 650;
+    }
+
+    .container-quadres{
+        background-color: lawngreen;
+        padding: 0 15px;
+    }
+
+    .quadre-text{
+        padding: 20px 20px;
+    }
+    
+    .quadre-text h3{
+        font-size: 22px;
+    }
+
+    .quadre-text p{
+        font-size: 20px;
+        padding: 10px 0px;
+    }
+
+}
+
+/* 6.2 i 6.4*/
+
+
+.container2-quadres{
+    margin: 0 auto;
+    background-color: rgb(8, 243, 78);
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px;
+    height: 500px;
+}
+
+
+.quadre-text2{
+    background-color: white;
+    padding: 60px 60px 30px 60px;
+    max-width: 530px;
+    margin: 20px 0px;
+    position: absolute;
+    right: 15px;
+    width: 45%;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);  
+}
+
+.quadre-text2 h3{
+    font-size: 36px;
+    font-family: museo-bold;
+}
+
+.quadre-text2 p{
+    font-size: 20px;
+    padding: 30px 0px;
+}
+
+
+.quadre-text2 a{
+    font-size: 16px;
+    padding: 14px 36px;
+    width: 800px;
+    background-color: rgb(124, 40, 85);
+    color: white;
+    text-align: center;
+}
+
+.quadre-foto2 img{
+    display: block;
+    position: relative;
+    float: left;
+}
+
+@media screen and (max-width: 1000px){
+    .quadre-text2{
+        position: relative;
+        float: left;
+        max-width: 750px;
+        width: 100%;
+        top: -100px;
+        margin-bottom: 0px;
+    }
+
+    .quadre-text2 h3{
+        font-size: 26px;
+    }
+
+    .container2-quadres{
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .quadre-foto2 img{
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
+        max-width: 650;
+    }
+
+    .container2-quadres{
+        background-color: lawngreen;
+        padding: 0 15px;
+    }
+
+    .quadre-text2{
+        padding: 20px 20px;
+        margin: 0 auto;
+        right: 0px;
+    }
+    
+    .quadre-text2 h3{
+        font-size: 22px;
+    }
+
+    .quadre-text2 p{
+        font-size: 20px;
+        padding: 10px 0px;
+    }
+
 }
