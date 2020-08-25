@@ -1,0 +1,28 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function mostrar_data(){
+            var d = new Date();
+            var dia = d.getDate();
+            var mes = d.getMonth();
+            var any = d.getFullYear();
+            var hora = d.getHours();
+            var min = d.getMinutes();
+            var seg = d.getSeconds();
+            window.alert("Data: "+ dia +"/"+  (mes+1) + "/" + any + " Hora: " + hora + ":" + min + ":" + seg);
+        }
+
+    </script>
+</head>
+<body>
+    
+    <input type="button" value="MOSTRA'M LA DATA" onclick="mostrar_data()">
+</body>
+</html>
