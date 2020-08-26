@@ -1,0 +1,49 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(232, 250, 236);
+        }
+
+        div{
+            background-color: rgb(184, 247, 208);
+            padding: 20px;
+            width: 35%;
+            margin: 50px auto;
+            border-radius: 10px;
+
+        }
+    </style>
+
+    <script>
+        function entrar(){
+            var edat = document.getElementById("text_edat").value;
+
+            if (edat >= 18){
+                window.alert("Accès correcte")
+            }
+
+            else{
+                window.alert ("Accès denegat")
+            }
+            
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+
+        <h1>ACCÈS</h1>
+        <label for="text_edat">EDAT:</label>
+        <input type="text" id="text_edat">
+
+        <input type="button" value="ENTRA" id="entra-button" onclick="entrar()">
+    </div>
+</body>
+</html>

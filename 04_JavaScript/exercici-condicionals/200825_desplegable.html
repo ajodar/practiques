@@ -1,0 +1,66 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #capa_fotografia{
+            background-color: mediumspringgreen;
+            width: 25%;
+            height: 100px;
+            margin: 50px auto;
+        }
+       
+        #capa_fotografia img{
+            width: 100%;
+        }
+
+    </style>
+
+    <script>
+        function escollir(){
+            var producte = document.getElementById("select_prod").value;
+            var resultat = document.getElementById("capa_fotografia");
+
+            if (producte == "bici"){
+                resultat.innerHTML = "<img src='images/bici.jpg'>";
+            }
+
+                else{
+
+                    if (producte == "patinet"){
+                        resultat.innerHTML = "<img src='images/patinet.jpg'>";
+                    }
+
+                    else{
+                        resultat.innerHTML = "<img src='images/monopati.jpg'>";
+                    }
+                }
+        
+        }
+
+    </script>
+</head>
+<body>
+    
+    <div id="encap">
+        <h1>Desplegable + IMG</h1>
+        
+        
+        <select name="" id="select_prod" onchange="escollir()">
+            <option value="bici">Bicicleta</option>
+            <option value="patinet">Patinet</option>
+            <option value="monopati">Monopatí</option>
+        </select>
+
+        <input type="button"  value="MOSTRA" > <!-- Si volem que canvii amb el botó, onclick="escollir()"-->
+
+    </div>
+    <div id="capa_fotografia">
+        
+    </div>
+
+</body>
+</html>

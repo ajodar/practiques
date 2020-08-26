@@ -1,0 +1,92 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #resultat{
+            background-color: lightgreen;
+            margin: 50px auto;  
+            width: 50%;
+            padding: 10px 20px;
+            text-align: center;
+            line-height: 50px; 
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #capa_resultat{
+            background-color: limegreen;
+            margin: 50px auto;  
+            width: 50%;
+            height: 100px;
+        }
+
+        #capa_resultat img{
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        function comprovar(){
+            var temp = document.getElementById("text_temperatura").value;
+            var resultat = document.getElementById("capa_resultat");
+
+        if(temp < 15){
+                resultat.innerHTML="<img src='images/fred.jpg'>";
+            } 
+
+            else{
+
+                if (temp > 25){
+                    resultat.innerHTML="<img src='images/calor.jpg'>";
+                }
+
+                else{
+                    resultat.innerHTML="<img src='images/oktemperatura.jpg'>";
+                }
+
+            }
+
+        }
+
+           
+           
+           
+           
+           /* if (temp < 15){
+                window.alert("Fa fred");
+            }
+
+            else{
+
+                if (temp > 25){
+                    window.alert("Fa calor");
+                }
+
+                else{
+                    window.alert("S'està bé");
+                }
+
+            }
+
+        }*/
+    </script>
+</head>
+<body>
+    
+<div id="resultat">
+
+        <h1>COMPROVA LA TEMPERATURA</h1>
+        <label for="text_temperatura">TEMPERATURA</label>
+        <input type="text" id="text_temperatura">
+    <br>
+        <input type="button" value="COMPROVA TEMPERATUA" id="button-temp" onclick="comprovar()">
+</div>
+
+<div id="capa_resultat">
+    
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function saludar(){
+            var nom = document.getElementById("text_nom").value;
+            window.alert('Hola '+ nom);
+        }
+    </script>
+
+</head>
+<body>
+    
+    <label for="text_nom">NOM:</label>
+    <input type="text" id="text_nom">
+    <br>
+    <input type="button" id="button_saludar" value="Saludar" onclick="saludar()">
+
+</body>
+</html>
