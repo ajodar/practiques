@@ -1,0 +1,317 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Restaurant SCRIPT</title>
+
+    <style>
+
+        @font-face {
+            font-family:sunn;
+            src: url(images/gelats/SUNN.otf_/SUNN.otf);
+        }
+
+        body{
+            text-align: center;
+            margin: 0;
+            background-color: black;
+            }
+
+        h1{
+            color:#f5a339;
+            font-family: sunn;
+            font-size: 75px;
+        }
+
+        h2{
+            font-family: sunn;
+            font-size: 50px
+        }
+
+
+        .capa_imatge{
+            width: 300px;
+            background-color: rgb(255, 255, 255);
+            height: 300px;
+            margin: 25px auto;
+            overflow: hidden;
+            
+        }
+
+        .capa_imatge img{
+            width: 100%;
+
+        }
+
+        #menu{
+            margin: 15px;
+            background-color: #faeddb;
+            
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        #gelat_capa{
+            background-color: beige;
+            margin: 15px auto; 
+        }
+
+        #resultat_gelat{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(184, 124, 33);
+        }
+
+        #panell_eleccio{
+            line-height: 50px;
+        }
+
+
+    </style>
+
+    <script>
+
+        // RESTAURANT - MENÚ
+
+        function mostra_menjar1(){
+            var menjar = document.getElementById("primer_plat").value;
+            var resultat = document.getElementById("capa_primer");
+
+            if(menjar == "macarrons"){
+                resultat.innerHTML= "<img src='images/macarrons.jpg'>";
+            }
+                else{
+                    if(menjar == "arros"){
+                        resultat.innerHTML = "<img src='images/arroscurry.jpg'>";
+                    }
+
+                    else{
+
+                    if(menjar=="amanida"){
+                    resultat.innerHTML="<img src='images/amanida.jpg'>";
+                    }
+                    
+                    else{
+                        resultat.innerHTML="<img src='images/gelats/escull_plat2.png'>";
+                    }
+                }
+                }
+        }
+
+        function mostra_menjar2(){
+            var menjar2 = document.getElementById("segon_plat").value;
+            var resultat2 = document.getElementById("capa_segona");
+
+            if(menjar2 == "llom"){
+                resultat2.innerHTML = "<img src='images/llom.jpg'>";
+            }
+
+            else{
+                if(menjar2 =="butifarra"){
+                    resultat2.innerHTML = "<img src='images/butifarra.jpg'>";
+                }
+
+                else{
+                    if(menjar2 == "peix"){
+                        resultat2.innerHTML="<img src='images/llenguado.jpg'>";
+                    }
+                    
+                    else{
+                        resultat2.innerHTML="<img src='images/gelats/escull_plat2.png'>";
+                    }
+                }
+            }
+        }
+
+        function mostra_menjar3(){
+            var menjar3 = document.getElementById("postres_plat").value;
+            var resultat3 = document.getElementById("capa_postres");
+
+            if(menjar3 == "gelat"){
+                resultat3.innerHTML = "<img src='images/gelat.jpg'>";
+            }
+
+            else{
+                if(menjar3 =="coulant"){
+                    resultat3.innerHTML = "<img src='images/coulant.jpg'>";
+                }
+
+                else{
+                    if(menjar3=="pinya"){
+                    resultat3.innerHTML="<img src='images/pinya.jpg'>";
+                    }
+                    
+                    else{
+                        resultat3.innerHTML="<img src='images/gelats/escull_plat2.png'>";
+                    }
+                }
+            }
+        }
+
+        // RESTAURANT - GELAT
+
+        function mostrar_gelat(){
+            var gust = document.getElementById("select_gust").value;
+            var tipus = document.getElementById("select_tipus").value;
+            var boles = document.getElementById("select_boles").value;
+            var resultat_gelat = document.getElementById("resultat_gelat");
+
+            if(gust=="no_gust" || tipus=="no_tipus" || boles=="no-boles"){
+                resultat_gelat.innerHTML="<img src='images/gelats/escull_gelat.png'>"
+            }
+
+            else if( //ACABARRRRRRRRR)
+
+        }
+
+
+    </script>
+
+
+  </head>
+
+
+  <body>
+
+    <!-- Encapcalament-->
+    
+
+    <div class="container-fluid" id="encap">
+        <h1>Restaurant JaScript</h1>
+    </div>
+    
+    <!--MENÚ-->
+    <div class="container" id="menu">
+
+        <div class="row">
+            <div class="col">
+            <h2>Fes la teva comanda </h2>
+            </div>  
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                PRIMER PLAT
+            </div>
+
+            <div class="col">
+                SEGON PLAT
+            </div>
+
+            <div class="col">
+                POSTRES
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <select name="" id="primer_plat" onchange="mostra_menjar1()">
+                    <option value="blanc">Escull una opció</option>
+                    <option value="macarrons">Macarrons al pesto</option>
+                    <option value="arros">Arròs al Curry</option>
+                    <option value="amanida">Amanida</option>
+                </select>
+            </div>
+
+            <div class="col">
+                <select name="" id="segon_plat" onchange="mostra_menjar2()">
+                    <option value="blanc">Escull una opció</option>
+                    <option value="llom">Secret de llom</option>
+                    <option value="butifarra">Butifarra</option>
+                    <option value="peix">Llenguado</option>
+                </select>
+            </div>
+
+            <div class="col">
+                <select name="" id="postres_plat" onchange="mostra_menjar3()">
+                    <option value="blanc">Escull una opció</option>
+                    <option value="gelat">Gelat</option>
+                    <option value="coulant">Coulant</option>
+                    <option value="pinya">Pinya</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div id="capa_primer" class="capa_imatge">
+                    <img src='images/gelats/escull_plat2.png'>
+                </div>
+            </div>
+            <div class="col">
+                <div id="capa_segona" class="capa_imatge">
+                    <img src='images/gelats/escull_plat2.png'>
+                </div>
+            </div>
+            <div class="col">
+                <div id="capa_postres" class="capa_imatge">
+                    <img src='images/gelats/escull_plat2.png'>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- GELATS-->
+
+    <div class="container" id="gelat_capa">
+        <div class="row">
+            <div class="col-4">
+                <h2>Personalitza el teu gelat</h2> 
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-4" id="panell_eleccio">
+                GUST
+                <select name="" id="select_gust">
+                    <option value="no_gust">Escull una opció</option>
+                    <option value="maduixa">Maduixa</option>
+                    <option value="vainilla">Vainilla</option>
+                    <option value="xocolata">Xocolata</option>
+                </select> 
+
+                <br>
+
+                TIPUS
+                <select name="" id="select_tipus">
+                    <option value="no_tipus">Escull una opció</option>
+                    <option value="cucurutxo">Cucurutxo</option>
+                    <option value="tarrina">Tarrina</option>
+                </select>
+
+                <br>
+
+                BOLES
+                <select name="" id="select_boles">
+                    <option value="no_boles">Escull una opció</option>
+                    <option value="bola1">1 bola</option>
+                    <option value="bola2">2 boles</option>
+                    <option value="bola3">3 boles</option>
+                </select>
+                <br>
+                <input type="button" value="Mostra el GELAT" onclick="mostrar_gelat()">
+            </div>
+
+            <div class="col">
+                <div id="resultat_gelat">
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+  </body>
+</html>

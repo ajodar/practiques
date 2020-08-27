@@ -5,9 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+<script>
+    function comprovar(){
+        var d=new Date;
+        var mes = d.getMonth();
+
+        if (mes == 7){
+            window.alert("És agost anem a la platja")
+        }
+
+        else{
+            window.alert("No és agost, però ja arribarà")
+        }
+
+    }
+</script>
+
 </head>
 <body>
     
-    <input type="button" value="COMPROVAR" onclick="">
+    <input type="button" value="COMPROVAR" onclick="comprovar()">
 </body>
 </html>

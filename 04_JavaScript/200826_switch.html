@@ -1,0 +1,44 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function comprovar(){
+            var d=new Date;
+            var dia=d.getDay();
+            
+            switch(dia){
+                case 0: 
+                    window.alert("Diumenge"); 
+                    break
+                case 1:
+                    window.alert("Dilluns"); 
+                    break
+                case 2: 
+                    window.alert("Dimarts");
+                    break
+                case 3: 
+                    window.alert("Dimecres");
+                    break 
+                case 4: 
+                    window.alert("Dijous");
+                    break
+                case 5: 
+                    window.alert("Divendres");
+                    break
+                case 6:
+                    window.alert("Dissabte");
+                    break            
+                }
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="button" value="BOTÓ" onclick="comprovar()">
+
+</body>
+</html>

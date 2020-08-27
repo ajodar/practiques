@@ -1,0 +1,33 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        //Edat de 18 a 25 pot participar en el curs: 
+
+        function comprovar_edat(){
+            var edat = document.getElementById("text_edat").value;
+            
+            if ((edat>=18)&&(edat<=25)){
+                alert("Benvingut al curs")
+            }
+
+            else{
+                alert ("No pots participar al curs")
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <label for="text_edat">EDAT: </label>
+    <input type="text" name="" id="text_edat">
+
+    <input type="button" value="COMPROVA" onclick="comprovar_edat()">
+</body>
+</html>

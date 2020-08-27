@@ -1,0 +1,39 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function comprovar(){
+            var d=new Date;
+            var mes = d.getMonth();
+
+            if(mes==6){
+                alert("Falta poc")
+            }
+
+            else{
+                if(mes == 7){
+                    alert("Vacances")
+                }
+
+                else{
+                    if (mes == 8){
+                        alert("Vacances acabades")
+                    }
+
+                    else{
+                        alert("Encara falta")
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="button" value="BOTO" onclick="comprovar()">
+</body>
+</html>

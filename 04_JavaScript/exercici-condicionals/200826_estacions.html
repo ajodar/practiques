@@ -1,0 +1,85 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #foto_estacio{
+            width: 50%;
+            margin: 50px auto;
+            background-color: cadetblue;
+            height: 500px;
+        }
+
+        #foto_estacio img{
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        function comprovar_estacio(){
+            var d=new Date;
+            var mes = d.getMonth();
+            var resultat = document.getElementById("foto_estacio");
+            var dia = d.getDate();
+            var hora = d.getHours();
+
+           //HIVERN: 
+
+           if((mes==0) || (mes==1) || ((mes==2)&&(dia<20)) || ((mes==11)&&(dia>21)) || ((mes==3)&&(dia==20)&&(hora<=4)) || ((mes==11)&&(dia==21)&&(hora<=10))){
+               resultat.innerHTML= "<img src='images/hivern.jpg'>";
+           }
+
+           //PRIMAVERA: 
+
+           else if(((mes==2)&&(dia>20)) || (mes==3) || (mes==4) || ((mes==5)&&(dia<=20))){
+               resultat.innerHTML="<img src='images/primavera.jpg'>"
+           }
+
+           //ESTIU: 
+
+           else if(((mes==5)&&(dia>20)) || (mes==6) || (mes==7) || ((mes==8)&&(dia<=22))){
+               resultat.innerHTML="<img src='images/estiu.jpg'>"
+           }
+
+           //TARDOR: 
+            
+           else if(((mes==8)&&(dia>22)) || (mes==9) || (mes==10) || ((mes==11)&(dia<=21))){
+                resultat.innerHTML="<img src='images/hivern.jpg'>"
+           }
+
+
+
+
+
+
+
+            /*
+
+            else if((mes>=3)&&(mes<5)){
+                resultat.innerHTML = "<img src='images/primavera.jpg'>";
+            }
+
+            else if ((mes>=6)&&(mes<8)){
+                resultat.innerHTML="<img src='images/estiu.jpg'>";
+            }
+
+            else if ((mes>=9)&&(mes<11)){
+                resultat.innerHTML="<img src='images/tardor.jpg'>";
+            }
+            */
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="button" value="COMPROVA ESTACIÓ" onclick="comprovar_estacio()">
+
+    <div id="foto_estacio">
+        
+    </div>
+</body>
+</html>
