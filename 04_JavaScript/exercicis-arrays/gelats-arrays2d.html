@@ -1,0 +1,81 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #foto_gelat{
+            background-color:chocolate;
+            width: 500px;
+            height: 500px;
+        }
+
+        #foto_gelat img{
+            background-color:chocolate;
+            width: 100%
+        }
+
+
+    </style>
+
+
+    <script>
+
+        
+
+        function mostra(){
+            //Taula 
+            var taulell_gelats = [
+            ["images/gelats/maduixa_cu.jpg", "images/gelats/maduixa_ta.jpg", "images/gelats/maduixa_esp.jpg"],
+            ["images/gelats/vainilla_cu.jpg", "images/gelats/vainilla_ta.jpg", "images/gelats/vainilla_esp.png"],
+            [["images/gelats/xoco_cu.jpg", "images/gelats/xoco_cu_des.jpg","images/gelats/xoco_cu_cook.jpg", "images/gelats/xoco_cu_neu.jpg" ], ["images/gelats/xoco_ta.jpg","images/gelats/xoco_ta_des.jpg","images/gelats/xoco_ta_cock.jpg","images/gelats/xoco_ta_neu.jpg"], "images/gelats/xoco_esp.jpg"],
+            ["images/gelats/lemon_cu.jpg", "images/gelats/lemon_ta.jpg", "images/gelats/lemon_esp.jpg"]
+            ]
+
+            var gust = document.getElementById("gust").value;
+            var tipus = document.getElementById("tipus").value;
+            var topping = document.getElementById("topping").value;
+            var resultat = document.getElementById("foto_gelat");
+            //Result
+            resultat.innerHTML = "<img src='" + taulell_gelats[gust][tipus][topping] + "'>";     
+        }
+
+    </script>
+
+
+
+</head>
+<body>
+    
+    GUST: 
+    <select name="" id="gust" onchange="mostra()">
+        <option value="0">Maduixa</option>
+        <option value="1">Vainilla</option>
+        <option value="2">Xocolata</option>
+        <option value="3">Llimona</option>
+    </select>
+
+    TIPUS:
+    <select id="tipus" onchange="mostra()">
+        <option value="0">Cucurutxo</option>
+        <option value="1">Tarrina</option>
+        <option value="2">Especial</option>
+    </select>
+
+    TOPPINGS:
+    <select id="topping" onchange="mostra()">
+        <option value="0">Sense topping</option>
+        <option value="1">Xocolata desfeta</option>
+        <option value="2">Galeta</option>
+        <option value="3">Neula</option>
+    </select>
+
+    <div id="foto_gelat">
+    
+    </div>
+
+</body>
+</html>

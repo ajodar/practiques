@@ -1,0 +1,52 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #capa_resultat{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+        }
+
+        #capa_resultat img{
+            width: 100%;
+        }
+
+    </style>
+
+    <script>
+        function mostra_plat(){
+            var plats = ["../exercici-condicionals/images/macarrons.jpg","../exercici-condicionals/images/arroscurry.jpg", "../exercici-condicionals/images/amanida.jpg" ];
+            var plat = document.getElementById("plat").value;
+            var resultat = document.getElementById("capa_resultat"); 
+
+            resultat.innerHTML = "<img src='" + plats[plat] + "'>"
+            
+        }
+        
+
+    </script>
+
+
+</head>
+<body>
+    
+    <select id="plat" onchange="mostra_plat()">
+        <option value="">Escull un plat</option>
+        <option value="0">Macarrons</option>
+        <option value="1">Arròs</option>
+        <option value="2">Amanida</option>
+
+    </select>
+
+    <div id="capa_resultat">
+
+    </div>
+
+</body>
+</html>
