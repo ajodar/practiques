@@ -1,0 +1,33 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validar(){
+            var text_email = document.getElementById("text_email").value; 
+
+            if (text_email.indexOf("@")<2){
+                alert("FALTA ARROVA")
+            }
+
+            else if(text_email.indexOf(".") == -1){
+                alert("FALTA PUNT")
+            }
+
+            else if (text_email.lastIndexOf(".") < text_email.indexOf("@")){
+                alert("SITUACIO incorrecte")
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+    <label for="text_email">Correu electrònic</label>
+    <input type="text" id="text_email">
+    <input type="button" value="VALIDA" onclick="validar()">
+</body>
+</html>

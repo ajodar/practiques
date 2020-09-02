@@ -1,0 +1,56 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #capa_resultat{ 
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            margin: 20px;
+        }
+
+        #capa_resultat img{
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        function comprovar(){
+            var resposta = document.getElementById("resposta0").value;
+            var capa_resultat = document.getElementById("capa_resultat");
+            
+            if(resposta=="descartes"){
+
+                capa_resultat.innerHTML = "<img src='images/correcte.jpg'>";
+            }
+
+            else{
+                capa_resultat.innerHTML = "<img src='images/incorrecte.png'>";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Examen de Filosofia</h1>
+
+    <h2>
+        Pregunta 1
+    </h2>
+
+    <p>
+        Quin filòsof va dir "Pienso, luego existo"?
+    </p>
+
+    <input type="text" id="resposta0">
+    <input type="button" value="COMPROVA" onclick="comprovar()">
+
+    <div id="capa_resultat">
+        CAPA RESPOSTA
+    </div>
+</body>
+</html>

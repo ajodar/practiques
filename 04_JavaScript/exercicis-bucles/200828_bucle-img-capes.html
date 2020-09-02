@@ -1,0 +1,58 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .capa_foto{
+            width: 200px;
+            height: 200px;
+            background-color: black; 
+            margin: 15px;
+            float: left;
+        }
+
+        .capa_foto img{
+            width: 100%;
+        }
+        
+    </style>
+
+    <script>
+
+        function mostrar(){
+        var fotos = ["../exercicis-arrays/images/llom.jpg", "../exercicis-arrays/images/macarrons.jpg", "../exercicis-arrays/images/arroscurry.jpg"];
+        var i = 0; 
+
+        for(i=0; i<fotos.length; i++){
+            var capa= document.getElementById("capa_"+i);
+            capa.innerHTML= "<img src='" + fotos [i] + "'>"
+        }
+        
+
+        }
+    </script>
+</head>
+<body>
+
+
+    <div id="capa_0" class="capa_foto">
+        
+    </div>
+
+    <div id="capa_1" class="capa_foto">
+        
+    </div>
+
+    <div id="capa_2" class="capa_foto">
+
+    </div>
+
+    <input type="button" value="MOSTRA" onclick="mostrar()">
+
+    
+</body>
+</html>

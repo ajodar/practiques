@@ -1,0 +1,111 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .capa_result{ 
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            margin: 20px;
+        }
+
+        .capa_result img{
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        function comprovar(){
+
+            var respostes = ["descartes", "socrates", "nietzsche"];
+            var i = 0;
+
+            for(i=0;i<respostes.length;i++){
+                var resposta = document.getElementById("resposta" + i).value;
+                var capa_resultat = document.getElementById("capa_resultat_" + i);
+            
+                if(resposta==respostes[i]){
+                    capa_resultat.innerHTML = "<img src='images/correcte.jpg'>";
+                }
+
+                else{
+                    capa_resultat.innerHTML = "<img src='images/incorrecte.png'>";
+                }
+
+            }
+            
+            
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Examen de Filosofia</h1>
+
+    <!-- PREGUNTA 1 -->
+
+    <h2>
+        Pregunta 1
+    </h2>
+
+    <p>
+        Quin filòsof va dir "Pienso, luego existo"?
+    </p>
+
+    <select id="resposta0">
+        <option value="descartes">Descartes</option>
+        <option value="socrates">Socrates</option>
+        <option value="nietzsche">Nietzsche</option>
+    </select>
+   
+
+    <div id="capa_resultat_0" class="capa_result">
+        CAPA RESPOSTA
+    </div>
+
+
+    <!-- PREGUNTA 2 -->
+
+    <h2>
+        Pregunta 2
+    </h2>
+
+    <p>
+        Quin filòsof va dir "Solo se que no se nada"?
+    </p>
+
+    <input type="text" id="resposta1" >
+
+    <div id="capa_resultat_1" class="capa_result">
+        CAPA RESPOSTA
+    </div>
+
+     <!-- PREGUNTA 3 -->
+
+     <h2>
+        Pregunta 3
+    </h2>
+
+    <p>
+        Quin filòsof va dir "Es sencillo hacer que las cosas sean complicadas, pero difícil hacer que sean sencillas."?
+    </p>
+
+    <input type="text" id="resposta2" >
+
+    <div id="capa_resultat_2" class="capa_result">
+        CAPA RESPOSTA
+    </div>
+
+
+
+
+
+
+    <!-- BOTO PER COMPROVAR -->
+    <input type="button" value="COMPROVA" onclick="comprovar()">
+</body>
+</html>

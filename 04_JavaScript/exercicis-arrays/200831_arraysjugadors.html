@@ -1,0 +1,65 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #capa_resultat{ 
+            width: 200px;
+            background-color: lightsteelblue;
+        }
+    </style>
+
+    <script>
+        // function afegir(){ 
+        //     var jugadors = [];
+        //     var jugador = document.getElementById("text_jug").value;
+        //     var i=0;
+        //     var resultat=document.getElementById("capa_resultat"); 
+
+        //     for(i=0; i<jugadors.length; i++){
+        //         jugadors.push(jugador); 
+        //         resultat.innerHTML = jugadors[jugador]; 
+        //     }
+
+
+        // }
+
+        var jugadors = [];
+        var i = 0;
+
+        function afegir(){
+
+            var i = 0; 
+            var jugador = document.getElementById("text_jug").value;
+            var resultat = document.getElementById("capa_resultat");
+            jugadors.push(jugador);
+            resultat.innerHTML=""; 
+
+            for(i=0; i<jugadors.length; i++){
+                resultat.innerHTML = resultat.innerHTML + jugadors[i] + "<br>";
+            }
+            
+        }
+
+
+    </script>
+</head>
+<body>
+
+    <h1>JUGADORS DE L'EQUIP</h1>
+    <input type="text" id="text_jug">
+
+    <input type="button" value="AFEGEIX" onclick="afegir()">
+    <input type="button" value="TREURE" onclick="treure()">
+
+    <div>
+        Jugadors: 
+        <div id="capa_resultat">
+
+        </div>
+    </div>
+</body>
+</html>

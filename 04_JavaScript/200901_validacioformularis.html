@@ -1,0 +1,40 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function validar(){
+            var err = false
+            var text_nom = document.getElementById("text_nom").value;
+            var formulari = document.getElementById("formlari");
+
+            if (text_nom==""){
+                alert("Camp obligatori");
+                err = true;
+            }
+
+            if (text_nom.length<3){
+                alert("Ha de tenir més de 3 caràcters");
+                err = true;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <form method="POST" action="" id="formulari">
+
+        <label for="text_nom">Nom</label>
+        <br>
+        <input type="text" name="nom" id="text_nom">
+        <br>
+        <input type="button" value="VALIDAR" onclick="validar()">
+
+
+    </form>
+
+</body>
+</html>

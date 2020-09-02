@@ -1,0 +1,113 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+    <style>
+
+    </style>
+
+    <script>
+
+        var respostes = ["laia", "nuria", "roso"]; 
+        var i = 0; 
+
+        function comprovar(){
+            var resposta = document.getElementById("resposta0").value;
+            for(i=0; i<length.respostes; i++){
+                if(resposta == "laia"){
+                    window.alert("correcte")
+                }
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <!-- PREG 1 -->
+                <div class="col" class="quadre-preg">
+                    <!-- Títol -->
+                    <div id="titol_preg0">
+                        TÍTOL
+                    </div>
+                    <!-- Pregunta -->
+                    <div id="pregunta0">
+                        num 3
+                    </div>
+                    <!-- Resposta -->
+                    <div id="capa_resposta0">
+                        <select id="resposta0">
+                            <option value="laia">laia</option>
+                            <option value="nuria">nuria</option>
+                            <option value="roso">roso</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col" class="quadre-preg">
+                    <!-- Títol -->
+                    <div id="titol_preg1">
+                        TÍTOL
+                    </div>
+                    <!-- Pregunta -->
+                    <div id="pregunta1">
+                        num 6
+                    </div>
+                    <!-- Resposta -->
+                    <div id="capa_resposta1">
+                        <select id="resposta0">
+                            <option value="laia">laia</option>
+                            <option value="nuria">nuria</option>
+                            <option value="roso">roso</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col" class="quadre-preg">
+                    <!-- Títol -->
+                    <div id="titol_preg2">
+                        TÍTOL
+                    </div>
+                    <!-- Pregunta -->
+                    <div id="pregunta2">
+                        num 1 
+                    </div>
+                    <!-- Resposta -->
+                    <div id="capa_resposta2">
+                        <select id="resposta0">
+                            <option value="laia">laia</option>
+                            <option value="nuria">nuria</option>
+                            <option value="roso">roso</option>
+                        </select>
+                    </div>
+                </div>
+
+                    
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="container">
+
+        <input type="button" value="COMPROVAR" onclick="comprovar()">
+        <div>
+            NOTA: 
+            <div id="capa_nota">apareix nota</div>
+        </div>
+
+    </div>  
+
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .resultat{
+            width: 100px;
+            height: 20px;
+            background-color: lightgrey;
+            margin: 15px;
+        }
+
+        #container1{
+            width: 25%;
+            float: left;
+            background-color: lightyellow;
+        }
+    </style>
+
+    <script>
+
+        function calcular(){
+
+            //NUMERO DOBLE
+            var numero = document.getElementById("text_numdoble").value;
+            var n = 1;
+            var resultat = document.getElementById("resultat_doble"); 
+            var i = 0;
+            var numero_limit = document.getElementById("text_limit").value;
+            var resultat_limit = document.getElementById("resultat_limit"); 
+           
+
+            for(i=0; i<numero; i++){
+                n= n*2; 
+                resultat.innerHTML = n;
+
+                if (n<=numero_limit){
+                    resultat_limit.innerHTML = n
+                }
+                
+            }
+
+            //NUMERO DOBLE LIMIT
+
+        }
+    </script>
+
+
+
+</head>
+<body>
+    
+    <h1>Exercicis numèrics</h1>
+
+
+    <!-- DOBLES -->
+
+    <h2>DOBLES</h2>
+
+    <div id="container1"> 
+        <div>
+            Número: 
+            <input type="text" id="text_numdoble">
+        </div>
+
+        <br>
+
+        <div>
+            Resultat: 
+            <div id="resultat_doble" class="resultat">
+
+            </div>
+        </div>
+
+
+        <div>
+            Límit: 
+            <input type="text" id="text_limit">
+        </div>
+        <br>
+        <div>
+            Resultat límit: 
+            <div id="resultat_limit" class="resultat">
+
+            </div>
+        </div>
+
+        <input type="button" value="CALCULAR" onclick="calcular()">
+
+
+    </div>   
+
+
+</body>
+</html>
