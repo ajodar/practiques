@@ -16,6 +16,11 @@
     <!-- CSS -->
     <style>
 
+        .container-fluid{
+            background-color: #1f1f1f;
+            color: white;
+        }
+
         #titol, #titol2{
             text-align: center;
             margin: 10px;
@@ -28,7 +33,7 @@
         #capa_img{
             width: 500px;
             height: 400px;
-            background-color: aquamarine;
+            background-color: #1f1f1f;
             margin: 0 auto;
         }
 
@@ -41,7 +46,7 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container-fluid">
 
         <!-- TITOL -->
         <div class="row">
@@ -85,24 +90,48 @@
     
 <!-- JQUERY -->
     <script>
+
         $(function(){
 
-            $(".foto_petita").click(function(){
-                var src_foto = $(this).attr("src");
-                $("#foto_ppal").attr("src", src_foto); 
-                
-
-            })
-
-
-
-            // $("#habitacio").click(function(){
-            //     $("#foto_ppal").attr("src", "images/habitacio.jpg")
+            //VERSIÓ 1
+            // $(".foto_petita").click(function(){
+            //     var src_foto = $(this).attr("src");
+            //     $("#foto_ppal").attr("src", src_foto); 
             // })
 
 
+            // VERSIÓ 2
+            // $(".foto_petita").click(function(){
+            //     var src_foto = $(this).attr("src");
+            //     $("#foto_ppal").attr("src", src_foto);
+
+            //     $(this).css("display", "block");
+            //     $(this).css("box-shadow", "0em 0 .8em grey");
+   
+            // })
 
 
+            // VERSIÓ 3
+
+           
+
+            $(".foto_petita").mouseover(function(){
+                var src_foto = $(this).attr("src");
+                $("#foto_ppal").attr("src", src_foto);
+
+                $(".foto_petita").css("box-shadow", "")
+                $(this).css("display", "block");
+                $(this).css("box-shadow", "0em 0 .8em grey");
+            })
+
+            $(".foto_petita").mouseout(function(){
+                $("#foto_ppal").attr("src", "images/hotel.jpg");
+
+            });
+
+           
+
+            
 
 
 
