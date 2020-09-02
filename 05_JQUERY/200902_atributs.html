@@ -1,0 +1,41 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style>
+        img{
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="images/mercuri.jpg" alt="" id="imatge">
+
+    <input type="button" value="FOTO 1" id="boto1">
+    <input type="button" value="FOTO 2" id="boto2">
+    <input type="button" value="FOTO 3" id="boto3">
+
+    <!-- JQUERY -->
+
+    <script>
+        $(function(){
+
+            $("#boto1").click(function(){
+                $("#imatge").attr("src", "images/mart.jpg");
+            });
+
+            $("#boto2").click(function(){
+                $("#imatge").attr("src", "images/venus.jpg")
+            })
+
+        });
+    </script>
+</body>
+</html>

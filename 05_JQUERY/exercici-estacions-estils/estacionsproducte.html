@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+    <!--CSS-->
+    <style>
+
+        /*FONS DE PANTALLA*/
+        body{
+            background: rgb(187,250,92);
+            background: linear-gradient(45deg, rgba(187,250,92,1) 61%, rgba(250,102,67,1) 89%);
+        }
+
+        /* TITOL */
+        #titol {
+            text-align: center;
+        }
+        
+        /* BOTONS */
+        #menu_botons {
+            text-align: center;
+        }
+
+        .boto{
+            padding: 10px;
+            width: 150px;
+        }
+
+        /* IMATGE */
+        #capa_imatge{
+            width: 300px;
+            height: 300px;
+            margin: 25px auto;
+            border: 10px solid rgba(250,102,67,1);
+        }
+
+        #capa_imatge img{
+            width: 100%;
+        }
+
+        /* TEXT */
+        #nom_fruita{
+            text-align: center;
+
+        }
+
+        /*PREU*/
+        #capa_preu{
+            font-size: 25px;
+            border: 5px solid red;
+            background-color:white;
+            width: 150px;
+            position: absolute;
+            right: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- TITOL -->
+        <div class="row">
+            <div class="col">
+                <h1 id="titol">Producte de temporada Fruiteria Jòdar-Portas</h1>
+            </div>
+        </div>
+
+        <!-- MENU BOTONS -->
+        <div class="row" id="menu_botons">
+            <div class="col">
+                <input type="button" value="Primavera" id="boto_primavera" class="boto">
+            </div>
+            <div class="col">
+                <input type="button" value="Estiu" id="boto_estiu" class="boto">
+            </div>
+            <div class="col">
+                <input type="button" value="Tardor" id="boto_tardor" class="boto">
+            </div>
+            <div class="col">
+                <input type="button" value="Hivern" id="boto_hivern" class="boto">
+            </div>
+        </div>
+
+        <!-- PRODUCTE: imatge fruita de temporada i text -->
+        <div class="row" id="capa_producte">
+            <div class="col">
+                <div id="capa_imatge">
+                    <img src="images/cereza.jpg" alt="Cirera">
+                </div>
+                <div id="capa_text">
+                    <h2 id="nom_fruita">Fruita</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac semper neque. Nulla
+                        facilisi. Praesent aliquet, dolor condimentum gravida commodo, orci mauris congue justo, eget
+                        consequat metus magna a metus. Praesent eros libero, pharetra non ligula in, tristique fermentum
+                        risus. Cras a diam ut nunc dictum euismod quis vitae nulla. Vestibulum eu massa ligula.
+                        Suspendisse malesuada turpis nec tellus euismod, eget vestibulum quam molestie. Vestibulum
+                        mattis nisi non ipsum pharetra accumsan. Nulla laoreet libero id semper fermentum. Donec eget
+                        faucibus urna, nec fermentum nunc. Proin eget velit nec lacus egestas feugiat. Ut vel laoreet
+                        lacus. Morbi euismod purus tristique lorem dictum congue. Ut ultricies, mauris eget consequat
+                        congue, est urna rutrum sem, vitae facilisis tellus tellus sit amet orci.
+                    </p>
+                    <div id="capa_preu">
+                        <p> Preu: 6€/kg.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JQUERY -->
+    <script>
+        $(function(){
+            
+            //BOTO ESTIU: 
+            $("#boto_estiu").click(function(){
+                $("body").css({
+                    "background":"rgb(246,235,82)",
+                    "background": "linear-gradient(45 deg, rgba(246,235,82,1) 61%, rgba(253,138,94,1) 89%)",
+                })
+
+            });
+
+
+        });
+    </script>
+
+    
+</body>
+
+</html>

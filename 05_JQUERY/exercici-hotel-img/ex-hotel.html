@@ -1,0 +1,113 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+    <!-- CSS -->
+    <style>
+
+        #titol, #titol2{
+            text-align: center;
+            margin: 10px;
+        }
+
+        #foto_ppal {
+            width: 500px;
+        }
+
+        #capa_img{
+            width: 500px;
+            height: 400px;
+            background-color: aquamarine;
+            margin: 0 auto;
+        }
+
+        .foto_petita{
+            width: 200px;
+        }
+    
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- TITOL -->
+        <div class="row">
+            <div class="col" id="titol">
+                <h1>HOTEL VELA - BARCELONA</h1>
+            </div>
+        </div>
+
+        <!-- IMATGE PPAL -->
+        <div class="row justify-content-center">
+            <div class="col">
+                <div id="capa_img">
+                    <img src="images/hotel.jpg" alt="" id="foto_ppal">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- IMATGES PETITES -->
+        <div class="row">
+            <div class="col" id="titol2">
+                <h2>Consulta altres espais: </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="images/habitacio.jpg" alt="" id="habitacio" class="foto_petita">
+            </div>
+            <div class="col">
+                <img src="images/piscina.jpg" alt="" id="piscina" class="foto_petita">
+            </div>
+            <div class="col">
+                <img src="images/bar.jpg" alt="" id="bar" class="foto_petita">
+            </div>
+            <div class="col">
+                <img src="images/spa.jpg" alt="" id="spa" class="foto_petita">
+            </div>
+        </div>
+
+    </div>
+    
+<!-- JQUERY -->
+    <script>
+        $(function(){
+
+            $(".foto_petita").click(function(){
+                var src_foto = $(this).attr("src");
+                $("#foto_ppal").attr("src", src_foto); 
+                
+
+            })
+
+
+
+            // $("#habitacio").click(function(){
+            //     $("#foto_ppal").attr("src", "images/habitacio.jpg")
+            // })
+
+
+
+
+
+
+
+        }); 
+
+    </script>
+</body>
+</html>

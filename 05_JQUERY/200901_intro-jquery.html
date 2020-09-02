@@ -1,0 +1,49 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #capa1{
+            background-color: lightseagreen;
+            width: 200px;
+            height: 200px;
+            margin: 15px;
+        }
+    </style>
+
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <input type="button" value="AMAGA" id="boto1">
+    <input type="button" value="MOSTRA" id="boto2">
+    <input type="button" value="CANVIA" id="boto3">
+
+    <div id="capa1">
+
+    </div>
+
+    <script>
+
+        $(function(){
+            $("#boto1").click(function(){
+                $("#capa1").hide();
+            });
+
+            $("#boto2").click(function(){
+                $("#capa1").slideDown();
+            });
+
+            $("#boto3").click(function(){
+                $("#capa1").slideToggle(500);
+            });
+
+        });
+
+    </script>
+</body>
+</html>

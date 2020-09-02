@@ -1,0 +1,76 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style>
+        #textnom{ 
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Formulari resum Jqueri</h1>
+
+
+    <label for="text_nom">Nom:</label>
+    <input type="text" name="nom" id="text_nom" class="camp_form">
+    <br>
+
+    <label for="text_email">Email:</label>
+    <input type="text" name="email" id="text_email" class="camp_form">
+    <br>
+
+    <label for="text_telefon">Telèfon</label>
+    <input type="text" name="telefon" id="text_telefon" class="camp_form">
+    <br>
+
+    <label for="text_comentari">Comentari:</label>
+    <input type="text" name="comentari" id=text_comentari class="camp_form">
+    <br>
+
+    <input type="button" value="ENVIAR" id="boto_enviar">
+
+
+    <!-- JQUERY -->
+    <script language=javascript>
+
+        //Funció botó
+        $(function(){
+            $("#boto_enviar").click(function(){
+                if($("#text_nom").val() == ""){
+                    //alert("El nom és obligatori")
+                    //$("#text_nom").css("background-color", "rgb(255,180,180)")
+                    $("#text_nom").css("background-color", "red");
+                }
+
+                if($("#text_email").val() == ""){
+                    $("#text_email").css("background-color", "red");
+                }
+
+                if($("#text_telefon").val() == ""){
+                    $("#text_telefon").css("background-color", "red");
+                }
+
+                if($("#text_comentari").val() == ""){
+                    $("#text_comentari").css("background-color", "red");
+                }
+
+            });
+
+
+            $(".camp_form").focus(function(){
+                $(this).css("background-color", "#FFFFFF"); 
+            });
+
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #resultat{
+            width: 790px;
+            height: 200px;
+            background-image: url(../../04_JavaScript/exercici-condicionals/images/primavera.jpg);
+        }
+        .caparesult{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+        #capa1{
+            background-color: rgb(25, 25, 228);
+
+        }
+
+        #capa2{
+            background-color: rgb(0, 255, 136);
+            left: 200px;
+        }
+
+        #capa3{
+            background-color: rgb(174, 0, 255);
+            left: 400px
+        }
+
+        #capa4{
+            background-color: rgb(255, 174, 0);
+            left: 600px;
+        }
+
+    </style>
+
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+    <input type="button" value="BOTO 1" id="boto1">
+    <input type="button" value="BOTO 2" id="boto2">
+    <input type="button" value="BOTO 3" id="boto3">
+    <input type="button" value="BOTO 4" id="boto4">
+    <input type="button" value="RESET" id="boto_reset">
+    
+    <div id="resultat">
+        <div id="capa1" class="caparesult">
+
+        </div>
+
+        <div id="capa2" class="caparesult">
+
+        </div>
+
+        <div id="capa3" class="caparesult">
+
+        </div>
+
+        <div id="capa4" class="caparesult">
+
+        </div>
+
+    </div>
+
+
+    <script>
+        $("#boto1").click(function(){
+            $("#capa1").hide();
+            $("#capa2").toggle();
+        });
+
+        $("#boto2").click(function(){
+            $("#capa2").hide();
+            $("#capa4").show();
+        });
+
+        $("#boto3").click(function(){
+            $("#capa3").toggle(); 
+            $("#capa1").show(); 
+            $("#capa4").hide();
+        });
+
+        $("#boto4").click(function(){
+            $("#capa1").show();
+            $("#capa3").hide();
+        })
+
+        $("#boto_reset").click(function(){
+            $("#capa1").show();
+            $("#capa2").show();
+            $("#capa3").show();
+            $("#capa4").show();
+        })
+
+
+        
+        
+    </script>
+</body>
+</html>
