@@ -1,0 +1,151 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+            text-align: center;
+        }
+
+        .titol{
+            font-size: 25px;
+            text-align:center;
+            font-weight: 700px;
+            font-family: 'Roboto Condensed', sans-serif;
+
+        }
+
+        .capa_result{
+            padding: 25px;
+            border: 5px solid black;
+            border-radius: 10px;
+            text-align: left;
+            margin: 20px;
+        }
+
+        .alta_disponibilitat{
+            background-color: rgb(183, 247, 183);
+        }
+
+        .mitja_disponibilitat{
+            background-color: rgb(248, 207, 132);
+        }
+
+        .baixa_disponibilitat{
+            background-color: rgb(253, 132, 132);
+        }
+
+        .no_disponibilitat{
+            background-color: grey; 
+            text-decoration:line-through; 
+        }
+
+        .text{
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .subtext{
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .subtext img{
+           width: 40px;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <h1>ESTAT DEL BICING | BARCELONA</h1>
+
+    
+    <input type="button" value="ACTUALITZA" id="boto">
+
+    <div class="container">
+        <div class="row justify-content-center" id="capa_estacions">
+
+        </div>
+
+    </div>
+
+
+    
+
+
+    <!-- JQUERY -->
+    <script>
+        $(function(){
+
+            //Apareixer estacions al clickar el botó
+
+            $("#boto").click(function(){
+                $.get("http://cors-anywhere.herokuapp.com/http://server.boka2.com/ws/bicis.json", function(data,status){
+
+                    var i = 0;
+                    var estacions = data.data.stations;
+
+                    //Bucle informació
+                    for(i=0; i < estacions.length; i++){
+                        var estacio = data.data.stations[i];
+                        var tipus_bikes = data.data.stations[i].num_bikes_available_types;
+                        var percent_disponible = Math.round(((estacio.num_bikes_available)/(estacio.num_docks_available + estacio.num_bikes_available))*100);
+                        $("#capa_estacions").append(
+                            "<div class='col-lg-3 col-md-5 capa_result' id='capa_estacio"+i+ "'>" +
+                                "<p class='titol'> ESTACIÓ " + estacio.station_id + "</p>"  +
+                                "<p class='text'> Bicicletes disponibles: " + estacio.num_bikes_available + "</p>" + 
+                                "<p class='text'> Bicicletes totals: " + estacio.num_docks_available + "</p>" + 
+                                //Percentatge
+                                "<p class='text'> Disponibilitat: " + percent_disponible + "% </p>" + 
+                                "<p class='text'> Tipus de bicicletes: " + "</p>"  +
+                                "<p class='subtext'> <img src='bike.png'>  " + tipus_bikes.mechanical + "</p>"  +
+                                "<p class='subtext'> <img src='electric-bike.png'>  " + tipus_bikes.ebike + "</p>" +
+                            "</div>"
+                        );
+
+                        if ((percent_disponible <=15) && (estacio.status == "IN_SERVICE")){
+                            $("#capa_estacio"+i).addClass("baixa_disponibilitat");
+                        }
+
+                        else if ((percent_disponible < 60) && (percent_disponible > 15) && (estacio.status == "IN_SERVICE")){
+                            $("#capa_estacio"+i).addClass("mitja_disponibilitat")
+                        }
+
+                        else if((percent_disponible >= 60) && (estacio.status == "IN_SERVICE") ){
+                            $("#capa_estacio"+i).addClass("alta_disponibilitat")
+                        }
+
+                        else{
+                            $("#capa_estacio"+i).addClass("no_disponibilitat")
+                        }
+
+                        
+                    };
+                    
+                    
+                }); 
+
+            });
+
+
+        }); 
+    </script>
+
+</body>
+</html>

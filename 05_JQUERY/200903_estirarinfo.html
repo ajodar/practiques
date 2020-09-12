@@ -1,0 +1,42 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <!-- JQUERY -->
+        <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style>
+        #capa1{
+            border: 1px solid grey;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="button" value="CARREGAR" id="boto_mostrar">
+    <div id="capa1">
+
+    </div>
+
+    <script>
+        $(function(){
+
+            $("#boto_mostrar").click(function(){
+                $("#capa1").load("http://www.w3schools.com/jquery/demo_test.txt")
+            })
+
+
+        });
+    </script>
+</body>
+</html>

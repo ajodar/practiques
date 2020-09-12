@@ -1,0 +1,70 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            text-align: center;
+        }
+
+
+        .capa_resultat{
+            background-color: rgb(169, 243, 239);;
+            margin: 10px;
+            padding: 5px;
+            border: 5px solid rgb(1, 78, 74);
+            
+        }
+
+        .titol{ 
+            background-color: rgb(150, 216, 213);
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>CONCURSOS PÚBLICS BCN</h1>
+    
+    <input type="button" value="MOSTRA UNA NOVA CONVOCATORIA" id="boto">
+
+    <div class="container">
+        <div class="row" id="capa_resultat">
+            
+        </div>
+        
+    </div>
+
+    <script>
+        $(function(){
+            $("#boto").click(function(){
+                
+                $.get("http://cors-anywhere.herokuapp.com/http://server.boka2.com/ws/seleccions.json", function(data, status){
+                    var i = 0
+                    for(i=0; i<data.Seleccions.length; i++){
+                        var convocatoria = data.Seleccions[i];
+                        $("#capa_resultat").append(
+                            "<div class='col-lg-5'>" + 
+                                "<div class='capa_resultat'>" +
+                                    "<p class='titol'>Títol: </p>" + convocatoria.title + "<br>" +
+                                    "<p class='titol'>Places: </p>" + convocatoria.nombrePlaces + "<br>" +
+                                    "<p class='titol'>Ens: </p>" + convocatoria.ens + "<br>" + 
+                                "</div>" +
+                            "</div>"
+                        );
+                    };
+                });
+            });
+        })
+    </script>
+</body>
+</html>

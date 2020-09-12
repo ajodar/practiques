@@ -1,0 +1,110 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Roboto Condensed';
+        }
+
+        .capa_aparcament{
+            background-color: #017CBF;
+            border-radius: 10px;
+            margin: 15px;
+            border: 2px solid #121C3F;
+            color: white;
+        }
+
+        .serveis img{
+            width: 40px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    
+    <h1>Aparcaments de Barcelona</h1>
+
+    <input type="button" value="ACTUALITZA" id="boto" >
+
+    <div class="container">
+        <div class="row justify-content-center" id="capa_aparcaments">
+
+            
+            
+        </div>
+    </div>
+
+    <!-- JQUERY -->
+    <script>
+        $(function(){
+
+            $("#boto").click(function(){
+                
+                $.get("http://cors-anywhere.herokuapp.com/http://server.boka2.com/ws/parquings.json", function(data,status){
+
+                    var aparcaments = data.ParkingList.Parking;
+                    var i = 0; 
+                    
+                    //Bucle capes.aparcament
+                    for(i=0; i<aparcaments.length; i++){
+                        
+                        //Variables
+                        var aparcament = data.ParkingList.Parking[i];
+                        var longitud = aparcament.ParkingAccess.Access.Longitude;
+                        var latitut = aparcament.ParkingAccess.Access.Latitude; 
+
+                        //Introduir elements a la capa
+                        $("#capa_aparcaments").append(
+                            "<div class='col-lg-5 capa_aparcament' id='aparcament"+ i +"'>" + 
+                                "<div id='nom"+i+"'>"+ aparcament.Name +"</div>" + 
+                                "<div id='codi"+i+"'> "+ aparcament.ParkingCode + " </div>" +
+                                "<div id='localitzacio"+i+"'> <a href='https://www.google.com/maps/@" + latitut + ","+ longitud +",18z'>Localització</a></div>" +
+                                "<div id='serveis"+i+"'>Serveis</div>" +
+                                    "<div class='row justify-content-center'>" +
+                                        "<div class='col serveis charger' id='charger"+i+"'> <img src='charger.png' > </div>" +
+                                        "<div class='col serveis wc'> <img src='wc.png' > </div>" +
+                                        "<div class='col serveis ascensor'> <img src='elevator.png'> </div>" + 
+                                        "<div class='col serveis consigna'> <img src='consigna.png'> </div>" +
+                                    "</div>" +
+                                "<div id='preu"+i+"'> PReu </div>" +
+                            "</div>"
+                        );
+
+                        //Condicionals serveis
+                        var charger = aparcament.ElectricCharger;
+                        
+                        if (charger == 0){
+                            $("#charger"+i+"").css("display","none"); 
+                        }
+                    }
+                })
+                
+
+
+
+            });
+        }); 
+
+
+    </script>
+</body>
+</html>

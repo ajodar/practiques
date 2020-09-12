@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+    <style type=text/css>
+        .titol_color{
+            color: red;
+            text-decoration: underline;
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Títol</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum quis tortor sollicitudin imperdiet
+            a nec justo. Cras sed purus pulvinar justo ullamcorper hendrerit nec feugiat turpis. Nullam maximus elit eu
+            diam molestie, ac consectetur felis euismod. Mauris nisl urna, porta scelerisque arcu a, placerat mattis ex.
+            Vivamus porta ullamcorper lorem, sed ullamcorper diam viverra sed. Curabitur a metus vestibulum, accumsan
+            felis vel, viverra metus. Mauris mattis, lacus at maximus cursus, nibh justo venenatis dui, vel feugiat
+            felis massa vel quam. Maecenas ultrices risus non leo semper aliquet. Cras euismod interdum dolor, a viverra
+            mauris sodales in. Phasellus accumsan efficitur interdum. Vivamus imperdiet est sed massa molestie
+            elementum. Duis sed condimentum turpis. Vivamus luctus vulputate malesuada. Aenean suscipit enim id nibh
+            porttitor, vel placerat mi euismod. Fusce nec ex turpis.</p>
+    </div>
+
+    <input type="button" value="COLOR" id="boto_color">
+    <input type="button" value="TREURE COLOR" id="boto_treure">
+    <input type="button" value="TOGGLE" id="boto_toggle">
+
+    <!-- JQUERY -->
+    <script>
+        $(function(){
+            $("#boto_color").click(function(){
+                $("h1").addClass("titol_color");
+            });
+
+            $("#boto_treure").click(function(){
+                $("h1").removeClass("titol_color");
+            })
+
+            $("#boto_toggle").click(function(){
+                $("h1").toggleClass("titol_color");
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

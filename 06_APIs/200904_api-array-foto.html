@@ -1,0 +1,77 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style>
+        #capa{
+            width: 100%;
+            background-color: lightgreen;
+        }
+
+        .targeta{
+            background-color: lightgreen;
+            border: 1px solid greenyellow; 
+            width: 300px;
+            height: 200px;
+            float: left;
+            position: relative;
+            margin: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <input type="button" value="MOSTRA" id="boto">
+
+    <div id="capa">
+        
+    </div>
+
+
+    <script>
+        $(function(){
+
+            $("#boto").click(function(){
+                $.get("https://jsonplaceholder.typicode.com/users", function(data, status){
+                    var i = 0;
+                    for(i=0; i<data.length; i++){
+                        var usuari = data[i]; 
+                        $("#capa").append(
+                            "<div class = 'targeta'>" + 
+                            "<p>" + usuari.name + "</p>" +
+                            "<p>" + usuari.email + "</p>" +
+                            "<p>" + usuari.phone + "</p>" +
+                            "</div>"
+                        );
+                    };
+                });
+            });
+            
+
+
+            // $("#boto").click(function(){
+            //     $.get("https://jsonplaceholder.typicode.com/users", function(data, status){
+            //         var i = 0;
+            //         for(i=0; i<data.length; i++){
+            //             var usuari = data[i]; 
+            //             $("#capa").append(usuari.name + "<br>")
+            //         };
+            //     });
+            // });
+            
+
+
+        });
+    </script>
+</body>
+</html>

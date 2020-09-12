@@ -1,0 +1,186 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Roboto Condensed';
+
+        }
+
+        #icona_search{
+            width: 25px;
+        }
+
+        #capa_foto_visible{
+            background-color: rgb(255, 255, 255);
+            height: 100%;
+        }
+
+        #capa_foto_hide{
+            background-color: rgb(106, 231, 89);
+            display: none;
+            width: 50%;
+            height: 100%;
+            position: fixed;
+            right: 0;
+        }
+
+        .imatge_resultat img{
+            max-width: 300px;
+            max-height: 150px;
+        }
+
+        .capa_resultat{
+            padding: 5px;
+            margin: auto auto
+        }
+
+        .imatge_resultat img:hover{
+            box-shadow: 0px 0px 15px rgb(0, 0, 0);
+        }
+
+        .titol_resultat{
+            text-align: center;
+            padding: 0 10px;
+            max-width: 100px;
+            max-height: 50px;
+            background-color: none;
+            overflow:hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            margin: 0 auto;
+        }
+
+        #hide_imatge{
+            max-width: 250px;
+        }
+
+       
+
+
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>CERCADOR DE FOTOGRAFIES DE FLICKR</h1>
+
+    <label for="text_search"><img src="search.png" alt="Buscar" id="icona_search"></label>
+    <input type="text" name="text_search" placeholder="Type a word" id="text_search">
+    <input type="button" id="boto" value="SEARCH">
+
+    <div class="container-fluid">
+        <div class="row" id="capa_fotos">
+            <div class="col" id="capa_foto_visible">
+                <div class="row" id="fila_resultat">
+                    
+                    <!-- AQUÍ VA EL BUCLE -->
+                </div>
+               
+            </div>
+            <div class="col" id="capa_foto_hide">
+                <div class="row">
+                    
+                    <div class="col" class="hide_capainfo">
+                        <img src="search.png" id="hide_imatge">
+                        <p id="hide_titol">titol</p>
+                        <p>info</p>
+                        <p>info2</p>
+                        <p>author</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+
+            //BOTO BUSCAR
+
+            $("#boto").click(function(){
+                //REFRESH - Eliminar anterior cerca
+                $("#capa_foto_hide").hide();
+                $("#fila_resultat").empty();
+                $("#capa_fotos").width("100%");
+               
+                
+
+                //Valor del text escrit
+                var text_search = $("#text_search").val();
+                
+
+                $.get("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=0558dda4ed8ce29a002c7f6cc7e3a51e&text="+ text_search +"&format=json&nojsoncallback=1", function(data, status){
+                    var fotos = data.photos.photo; 
+                    var i = 0;
+                    
+                    for(i=0; i<fotos.length; i++){
+                        var foto = data.photos.photo[i];
+                        $("#fila_resultat").append(
+                            "<div class='col-lg-3 col-md-4 col-sm-6 capa_resultat'>"+ 
+                                "<div class='imatge_resultat'>" + 
+                                    "<img src=https://farm" + foto.farm + ".staticflickr.com/" + foto.server + "/" + foto.id + "_" + foto.secret + ".jpg>" + 
+                                "</div>" +
+                                "<div class='titol_resultat'>" +
+                                    foto.title +
+                                "</div>" + 
+                            "</div>"
+                        );
+                    };
+
+                    
+                    $("#fila_resultat img").click(function(){
+                        
+                        //CLICAR IMATGE APAREIX CAPA
+                        $("#capa_foto_hide").show();
+                        $(" #capa_fotos").width("50%");
+                        $(".capa_resultat").removeClass("col-lg-3 col-md-4 col-sm-6").addClass("col-lg-6 col-md-6 col-sm-12 desplegat");
+                        
+                        var foto = data.photos.photo[i];
+                        var titol = foto.title;
+                        alert(titol)
+                        //APAREIX IMATGE I INFO A CAPA
+                        // var titol_imatge = $(foto).attr();
+                        // alert(titol_imatge)
+                        //$("#hide_img_123").attr("src", u);
+                       
+                        
+                    
+                    });
+
+
+
+                    
+                });
+                
+            });
+
+            
+
+           
+
+        });
+    </script>
+    
+</body>
+</html>

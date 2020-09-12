@@ -1,0 +1,88 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <style>
+        h1, #menu_botons, h2, h3{
+            text-align: center;
+        }
+
+        #menu_botons{
+            margin: 20px 0px
+        }
+
+        #capa-noticia{
+            border: 1px solid grey;
+            max-width: 800px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Notícies de la setmana</h1>
+
+    <div class="container" >
+        <div class="row" id="menu_botons" >
+            <div class="col">
+                <input type="button" value="Notícia 1" id="boto1" class="botons">
+            </div>
+
+            <div class="col">
+                <input type="button" value="Notícia 2" id="boto2" class="botons">
+            </div>
+
+            <div class="col">
+                <input type="button" value="Notícia 3" id="boto3" class="botons">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container" id="capa-noticia">
+        <div class="row">
+            <div class="col">
+                <h2>NOTÍCIA N</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>TITOL NOTICIA N</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>text</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(function(){
+           
+            $("#boto2").click(function(){
+                $.get("https://jsonplaceholder.typicode.com/posts/2", function(data,status){
+                    $("h2").html("NOTÍCIA "+ data.id);
+                    $("h3").html(data.title);
+                    $("p").html(data.body);
+                });
+
+            });
+
+        });
+
+    </script>
+    
+</body>
+</html>

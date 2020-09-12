@@ -1,0 +1,112 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- JQUERY CSS -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- JQUERY UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+
+    <style>
+        .barra{
+            width: 100%;
+            margin: 5px;
+        }
+
+        .capa_barres{
+            width: 30%;
+            float: left;
+        }
+
+        .capa_num{
+            width: 100px;
+            float: left;
+            position: relative;
+            left: 15px
+        }
+        
+        .quadre_num{
+            width: 90px;
+        }
+
+        #resultat{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float:left;
+            position: relative;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Slider colorway</h1>
+
+    <div class="capa_barres">
+        <div id="red_barra" class="barra"></div>
+        <div id="green_barra" class="barra"></div>  
+        <div id="blue_barra" class="barra"></div>   
+    </div>
+    
+    <div class="capa_num">
+        <input type="text" id="red_color" class="quadre_num">
+        <input type="text" id="green_color" class="quadre_num">
+        <input type="text" id="blue_color" class="quadre_num">
+    </div>
+
+    <div id="resultat">
+
+    </div>
+
+    <script>
+        $(function(){
+            $( "#red_barra" ).slider({
+                range: "min",
+                min: 0,
+                max: 100,
+                value: 60,
+                slide: function( event, ui ) {
+                    $( "#red_color" ).val( ui.value );
+                }
+            });
+            $( "#red_color" ).val( $( "#red_barra" ).slider( "value" ) );
+
+
+            $( "#green_barra" ).slider({
+                range: "min",
+                min: 0,
+                max: 100,
+                value: 60,
+                slide: function( event, ui ) {
+                    $( "#green_color" ).val( ui.value );
+                }
+            });
+            $( "#green_color" ).val( $( "#green_barra" ).slider( "value" ) );
+
+            $( "#blue_barra" ).slider({
+                range: "min",
+                min: 0,
+                max: 100,
+                value: 60,
+                slide: function( event, ui ) {
+                    $( "#blue_color" ).val( ui.value );
+                }
+            });
+            $( "#blue_color" ).val( $( "#blue_barra" ).slider( "value" ) );
+
+            //POSAR AL SLIDE
+
+
+
+        });
+    </script>
+    
+</body>
+</html>
