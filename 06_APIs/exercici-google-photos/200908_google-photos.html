@@ -33,7 +33,7 @@
         }
 
         #capa_foto_hide{
-            background-color: rgb(106, 231, 89);
+            background-color: rgb(255, 255, 255);
             display: none;
             width: 50%;
             height: 100%;
@@ -42,7 +42,7 @@
         }
 
         .imatge_resultat img{
-            max-width: 300px;
+            max-width: 200px;
             max-height: 150px;
         }
 
@@ -58,7 +58,7 @@
         .titol_resultat{
             text-align: center;
             padding: 0 10px;
-            max-width: 100px;
+            max-width: 200px;
             max-height: 50px;
             background-color: none;
             overflow:hidden;
@@ -69,7 +69,12 @@
         }
 
         #hide_imatge{
-            max-width: 250px;
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        #hide_titol{
+            font-weight: 800;
         }
 
        
@@ -86,6 +91,13 @@
     <label for="text_search"><img src="search.png" alt="Buscar" id="icona_search"></label>
     <input type="text" name="text_search" placeholder="Type a word" id="text_search">
     <input type="button" id="boto" value="SEARCH">
+    <br>
+    <select name="pagines_opcions" id="pagines_opcions">
+        <option value="100">Fotos per pàgina</option>
+        <option value="10">10</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+    </select>
 
     <div class="container-fluid">
         <div class="row" id="capa_fotos">
@@ -101,14 +113,16 @@
                     
                     <div class="col" class="hide_capainfo">
                         <img src="search.png" id="hide_imatge">
-                        <p id="hide_titol">titol</p>
-                        <p>info</p>
-                        <p>info2</p>
-                        <p>author</p>
+                        <p id="hide_titol"></p>
                     </div>
                     
                 </div>
                 
+            </div>
+        </div>
+        <div class="row" id="fila_pagines">
+            <div class="col capa_pagines">
+                1,2,3,4
             </div>
         </div>
     </div>
@@ -128,9 +142,11 @@
 
                 //Valor del text escrit
                 var text_search = $("#text_search").val();
+                var perpage_numero = $("#pagines_opcions").val();
+                
                 
 
-                $.get("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=0558dda4ed8ce29a002c7f6cc7e3a51e&text="+ text_search +"&format=json&nojsoncallback=1", function(data, status){
+                $.get("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=ac48aeab2258f96b0dfbdce7543b3462&text="+ text_search +"&per_page=" + perpage_numero +"&page=5&format=json&nojsoncallback=1", function(data, status){
                     var fotos = data.photos.photo; 
                     var i = 0;
                     
@@ -149,20 +165,35 @@
                     };
 
                     
-                    $("#fila_resultat img").click(function(){
+
+                    //CLICAR IMATGE I APAREIX EN GRAN AL COSTAT
+                    $(".capa_resultat").click(function(){
+
+                        //RESET
+                        $("#hide_imatge, #hide_titol").empty();
+
+
                         
                         //CLICAR IMATGE APAREIX CAPA
                         $("#capa_foto_hide").show();
                         $(" #capa_fotos").width("50%");
                         $(".capa_resultat").removeClass("col-lg-3 col-md-4 col-sm-6").addClass("col-lg-6 col-md-6 col-sm-12 desplegat");
                         
-                        var foto = data.photos.photo[i];
-                        var titol = foto.title;
-                        alert(titol)
+                        
                         //APAREIX IMATGE I INFO A CAPA
-                        // var titol_imatge = $(foto).attr();
-                        // alert(titol_imatge)
-                        //$("#hide_img_123").attr("src", u);
+
+                        //Posició al array
+                        var index = $(".capa_resultat").index(this);
+
+                        //Imatge
+                        var foto_click = data.photos.photo[index];
+                        $("#hide_imatge").attr("src", "https://farm" + foto_click.farm + ".staticflickr.com/" + foto_click.server + "/" + foto_click.id + "_" + foto_click.secret + ".jpg>");                    
+
+                        //Títol                        
+                        var titol_text = data.photos.photo[index].title; 
+                        $("#hide_titol"). append(titol_text);
+
+                        
                        
                         
                     
